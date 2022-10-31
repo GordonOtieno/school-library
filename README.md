@@ -28,7 +28,7 @@ To get a local copy up and running follow these simple example steps.
 
 In your terminal, navigate to your current directory and clone this repo
 
-`https://github.com/GordonOtieno/school-library`
+`https://github.com/GordonOtieno/school-library.git`
 
 Locate the directory in your file explorer
 
