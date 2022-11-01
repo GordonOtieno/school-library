@@ -18,9 +18,16 @@ class Person <Nameable
   def correct_name
     @name
 
+# private methods
   private
 
   def of_age?
     @age >= 18
   end
 end
+person = Person.new(22, 'maximilianus')
+  person.correct_name
+  capitalizedPerson = CapitalizeDecorator.new(person)
+  capitalizedPerson.correct_name
+  capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+  capitalizedTrimmedPerson.correct_name
