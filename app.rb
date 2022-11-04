@@ -98,6 +98,7 @@ class App
     puts ' '
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def menu_selection
     main_menu
     selection = gets.chomp.to_i
@@ -119,5 +120,6 @@ class App
       exit
     end
     menu_selection
+    # rubocop:enable Metrics/CyclomaticComplexity
   end
 end
