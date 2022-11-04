@@ -11,14 +11,14 @@ class App
   end
 
   def list_books
-    puts 'No books found' if @books.empty?
+    puts 'No Available books, Please enter option[4] in Main menu to create one.' if @books.empty?
     @books.each_with_index do |book, index|
       puts "(#{index + 1}) Book => Title: #{book.title}, Author: #{book.author}"
     end
   end
 
   def list_people
-    puts 'No people exist' if @people.empty?
+    puts 'No person exist. Please enter option[3] to create one' if @people.empty?
     @people.each_with_index do |person, index|
       puts "(#{index + 1}) [#{person.class}] => Name: #{person.name}, Age: #{person.age}, Id: #{person.id}"
     end
@@ -67,7 +67,15 @@ class App
     person_number = gets.chomp.to_i
     print 'Date: '
     date = gets.chomp
-    @rentals.push(Rental.new(date, @people[person_number - 1], @books[book_number - 1]))
+    if @books.empty?
+      puts 'No Book exist in the Library. Please create a book to continue'
+      create_person
+    elsif @people.empty?
+      puts 'No person exist. Please create person to continue'
+      create_book
+
+      @rentals.push(Rental.new(date, @people[person_number - 1], @books[book_number - 1]))
+    end
     puts 'Rental created successfully'
   end
 
