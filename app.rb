@@ -1,3 +1,4 @@
+require 'pry'
 require_relative './book'
 require_relative './student'
 require_relative './teacher'
@@ -52,7 +53,8 @@ class App
     print 'Enter title: '
     title = gets.chomp
     print 'Enter author: '
-    author = gets.chomp
+    authors = gets.chomp
+    binding.pry
     @books.push(Book.new(title, author))
     puts "#{title} book added successfully"
   end
