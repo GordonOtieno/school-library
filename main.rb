@@ -2,8 +2,8 @@ require './app'
 
 def main
   puts 'Welcome to My  School Library'
-
 end
+
 def main_menu
   puts ' '
   puts 'Please choose an option by entering a number:
@@ -39,7 +39,7 @@ def menu_selection
     puts 'Thanks for using our system. See you later'
     exit
   end
-  
+
   # rubocop:enable Metrics/CyclomaticComplexity
 end
 

@@ -1,4 +1,3 @@
-require 'pry'
 require_relative './book'
 require_relative './student'
 require_relative './teacher'
@@ -53,8 +52,7 @@ class App
     print 'Enter title: '
     title = gets.chomp
     print 'Enter author: '
-    authors = gets.chomp
-    binding.pry
+    author = gets.chomp
     @books.push(Book.new(title, author))
     puts "#{title} book added successfully"
   end
@@ -94,6 +92,7 @@ class App
       end
     end
   end
+
   def main_menu
     puts ' '
     puts 'Please choose an option by entering a number:
@@ -107,6 +106,7 @@ class App
     puts ' '
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def menu_selection
     main_menu
     selection = gets.chomp.to_i
@@ -128,6 +128,6 @@ class App
       exit
     end
     menu_selection
+    # rubocop:enable Metrics/CyclomaticComplexity
   end
-
 end
