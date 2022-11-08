@@ -112,19 +112,19 @@ class App
     selection = gets.chomp.to_i
     case selection
     when 1
-      list_all_books
+      list_books
     when 2
-      list_all_people
+      list_people
     when 3
       create_person
-    when 4
+    when 41
       create_book
     when 5
       create_rental
     when 6
-      list_all_rentals
+      list_rentals
     when 7
-      puts 'bye bye see you later 👋'
+      puts 'Thanks for using our system. See you later'
       exit
     end
     menu_selection

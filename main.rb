@@ -23,21 +23,20 @@ end
 # rubocop:disable Metrics/CyclomaticComplexity
 def menu_selection
   main_menu
-  school = App.new
   selection = gets.chomp.to_i
   case selection
   when 1
-    school.list_books
+    list_books
   when 2
-    school.list_people
+    list_people
   when 3
-    school.create_person
+    create_person
   when 4
-    school.create_book
+    create_book
   when 5
-    school.create_rental
+    create_rental
   when 6
-    school.list_rentals
+    list_rentals
   when 7
     puts 'Thanks for using our system. See you later'
     exit
