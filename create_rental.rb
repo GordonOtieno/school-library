@@ -3,9 +3,9 @@ require_relative './rental'
 module CreateRental
   def create_rental
     puts 'Select a book from the following list by number'
-    list_books
+    display_all_books
     selected_book_option = gets.chomp.to_i
-    list_people
+    display_all_people
     selected_person_option = gets.chomp.to_i
     print 'Date: '
     date = gets.chomp

@@ -1,5 +1,6 @@
 require_relative './decorator'
-class CapitalizeDecorator < Decorator
+require_relative './person'
+class CapitalizeDecorator < BaseDecorator
   def correct_name
     @nameable.correct_name.capitalize
   end
