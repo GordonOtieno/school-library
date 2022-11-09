@@ -52,3 +52,14 @@ module PreserveData
     end
     save_to_file(RENTALS_FILE_NAME, rentals_hash)
   end
+
+  def save_books
+    books_hash = @books.map do |book|
+      {
+        title: book.title,
+        author: book.author
+      }
+    end
+    save_to_file(BOOKS_FILE_NAME, books_hash)
+  end
+end
