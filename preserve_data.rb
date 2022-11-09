@@ -30,6 +30,7 @@ module PreserveData
     end
     save_to_file(PERSON_FILE_NAME, people_hash)
   end
+
   def save_rentals
     rentals_hash = []
     @rentals.each do |rental|
