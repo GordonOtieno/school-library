@@ -8,6 +8,8 @@ require_relative './create_rental'
 require_relative './display_people'
 require_relative './display_books'
 require_relative './display_rental'
+require_relative './load_data'
+require_relative './preserve_data'
 
 class App
   include CreatePerson
@@ -16,6 +18,8 @@ class App
   include DisplayBooks
   include DisplayPeople
   include DisplayRental
+  include PreserveData
+  include PersistData
 
   attr_accessor :books, :students, :teachers, :rentals
 
@@ -23,6 +27,7 @@ class App
     @books = []
     @people = []
     @rentals = []
+    persist_data
   end
 
   def menu_selection(selection)
@@ -43,5 +48,11 @@ class App
       puts 'Thanks for using our system. See you later'
       exit
     end
+  end
+
+  def exit
+    save_books
+    save_people
+    save_rentals
   end
 end
