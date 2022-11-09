@@ -1,5 +1,4 @@
-require './app'
-
+require_relative './app'
 class Main
   def initialize
     @app = App.new
@@ -9,9 +8,9 @@ class Main
   def prompt
     loop do
       display_options
-      option = accept_input
+      option = take_input
 
-      @app.menu_selection(option)
+      @app.run(option)
 
       break if option == 7
     end
@@ -28,15 +27,16 @@ class Main
     puts '7. - Exit'
   end
 
-  def accept_input
-    puts 'Enter a number: '
+  def take_input
+    print 'Enter a number: '
     option = gets.chomp.to_i
     while option.nil? || option < 1 || option > 7
-      puts 'Please Enter a number between 1 and 7.'
+      puts 'Please enter a number between 1 and 7!'
       print 'Enter a number: '
       option = gets.chomp.to_i
     end
     option
   end
 end
+
 Main.new

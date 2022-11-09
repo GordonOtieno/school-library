@@ -1,11 +1,7 @@
 module DisplayPeople
-  def list_people
-    if @people.empty?
-      puts 'No Person exists. Please Add'
-      create_person
-    end
+  def display_all_people
     @people.each_with_index do |people, index|
-      puts "#{index}) Name: #{people.name}, ID: #{people.id}, Age: #{people.age}"
+      puts "#{index}) [#{people.role}] Name: #{people.name}, ID: #{people.id}, Age: #{people.age}"
     end
   end
 end

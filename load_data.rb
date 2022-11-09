@@ -3,11 +3,11 @@ require_relative './book'
 require_relative './student'
 require_relative './teacher'
 
-module PersistData
+module LoadData
   PERSON_FILE_NAME = './person.json'.freeze
   RENTALS_FILE_NAME = './rentals.json'.freeze
   BOOKS_FILE_NAME = './books.json'.freeze
-  def persist_data
+  def load_data
     load_people
     load_books
     load_rentals
@@ -37,7 +37,7 @@ module PersistData
         @people << student
       else
         teacher = Teacher.new(people['specialization'], people['age'], people['name'])
-
+        teacher.id = people['id']
         @people << teacher
       end
     end
