@@ -16,10 +16,10 @@ describe Teacher do
   end
 
   describe '#specialization' do
-  it 'returns the correct specialization' do
-    expect(teacher.specialization).to eq('Phy')
+    it 'returns the correct specialization' do
+      expect(teacher.specialization).to eq('Phy')
+    end
   end
-end
 
   describe '#can_use_services?' do
     it 'returns true' do

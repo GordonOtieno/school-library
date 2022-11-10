@@ -17,5 +17,4 @@ describe Person do
       @person.correct_name.should eq @person.name
     end
   end
-
 end

@@ -17,8 +17,8 @@ describe Rental do
     end
   end
   describe '#date' do
-  it 'returns the correct date' do
-    expect(rental.date).to eq('10-11-2022')
-  end
+    it 'returns the correct date' do
+      expect(rental.date).to eq('10-11-2022')
+    end
   end
 end
